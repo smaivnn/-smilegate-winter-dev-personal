@@ -4,9 +4,9 @@
 1인 프로젝트(인증 시스템)기반의 admin대시보드
    
 >## 기능
-- 로그인시 accessToken 발급
-- admin기능 사용 시 토큰 유효성 검증
-- 유효하지 않은 토큰시 refreshToken을 통한 accessToken 갱신
+- user 목록 조회
+- user 역할 변경
+- user 탈퇴 처리
    
 >## 기술스택
 ### client
@@ -16,10 +16,12 @@
 - express
 - mongoDB
    
->## 아키텍쳐
+>## 프로세스
+- 로그인시 accessToken 발급
+- admin기능 사용 시 토큰 유효성 검증
+- 유효하지 않은 토큰시 refreshToken을 통한 accessToken 갱신
 
-   
->## 작동 화면
+![logicDiagram](https://user-images.githubusercontent.com/85821828/209441253-3c63ba29-9948-4b6c-af2c-be03c2343445.png)
 
    
 >## 주요 구현
@@ -149,6 +151,16 @@ role이 변경되었을 때 페이지 리로드 없이 해당하는 컴포넌트
 accessToken은 주로 로컬 변수로 관리하며 노출되지 않도록 한다.
 하지만 현재 zustand를 통한 전역변수에 담겨있고, 이를 persist시키는 과정에서 storage에 토큰이 노출되는 현상이 있다.
 이러한 부분을 context를 사용한 로컬 변수로 전환하는 과정이 필요하다.
-
-
+   
+>## 작동 화면
+메인 페이지   
+<img width="600" alt="매인" src="https://user-images.githubusercontent.com/85821828/209441518-f0d11adc-6e6e-42e0-bb40-21c38654dedd.png">   
+로그인 페이지   
+<img width="600" alt="로그인" src="https://user-images.githubusercontent.com/85821828/209441526-1696be50-bd80-4d9a-b023-22a97dbab01d.png">   
+회원가입 페이지   
+<img width="600" alt="회원가입" src="https://user-images.githubusercontent.com/85821828/209441533-a1d09117-e793-46dd-9bf7-6c8dabe1c488.png">   
+로그인 이후   
+<img width="600" alt="로그인이후" src="https://user-images.githubusercontent.com/85821828/209441539-b65f2768-2c05-45ed-b743-1a8ed44bf9db.png">   
+관리자 페이지 진입(토큰 변경됨)   
+<img width="600" alt="관리자페이지진입" src="https://user-images.githubusercontent.com/85821828/209441543-5853f534-f057-43ff-a2fd-c9785d8b1d59.png">
 
