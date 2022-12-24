@@ -2,27 +2,26 @@
 
 >## 개요
 1인 프로젝트(인증 시스템)기반의 admin대시보드
-
+   
 >## 기능
 - 로그인시 accessToken 발급
 - admin기능 사용 시 토큰 유효성 검증
 - 유효하지 않은 토큰시 refreshToken을 통한 accessToken 갱신
-
+   
 >## 기술스택
-#### client
+### client
 - react
-
-#### server
+### server
 - node.js
 - express
 - mongoDB
-
+   
 >## 아키텍쳐
 
-
+   
 >## 작동 화면
 
-
+   
 >## 주요 구현
 ### clinet side
 1. axios interceptor를 통한 토큰 포함 및 유효성 여부 검사 hooks
@@ -127,9 +126,10 @@ const verifyRoles = (allowedRoles) => {
 
 module.exports = verifyRoles;
 ```
-
+   
 >## 프로젝트 진행 중 문제점
-###1. client측 동작 고려 미흡
+
+### 1. client측 동작 고려 미흡
 서버를 구상할 때 client측의 동작을 충분히 고려한 후 진행하여야 하는데, 
 이를 고려하지 않고 서버를 우선 구현한 후 client의 기능을 서버에 맞추는 방식으로 진행이 되었다.
    
